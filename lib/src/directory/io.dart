@@ -126,4 +126,8 @@ class DirUtils implements LocalStorageImpl {
       throw PlatformNotSupportedError();
     }
   }
+
+  Map<String, dynamic> getData(){
+    return _data;
+  }
 }

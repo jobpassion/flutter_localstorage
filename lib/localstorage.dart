@@ -68,6 +68,10 @@ class LocalStorage {
     return _dir.getItem(key);
   }
 
+  Map<String, dynamic> getData(){
+    return _dir.getData();
+  }
+
   /// Saves item by [key] to a storage. Value should be json encodable (`json.encode()` is called under the hood).
   /// After item was set to storage, consecutive [getItem] will return `json` representation of this item
   /// if [toEncodable] is provided, it is called before setting item to storage

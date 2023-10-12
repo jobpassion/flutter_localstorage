@@ -56,6 +56,10 @@ class DirUtils implements LocalStorageImpl {
   Future<void> setItem(String key, value) {
     throw PlatformNotSupportedError();
   }
+  @override
+  Map<String, dynamic> getData() {
+    throw PlatformNotSupportedError();
+  }
 
   @override
   Stream<Map<String, dynamic>> get stream => storage.stream;

@@ -25,4 +25,6 @@ abstract class LocalStorageImpl {
   Future<void> remove(String key);
 
   Future<void> flush();
+
+  Map<String, dynamic> getData();
 }

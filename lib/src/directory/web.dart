@@ -97,4 +97,8 @@ class DirUtils implements LocalStorageImpl {
       await _writeToStorage({});
     }
   }
+
+  Map<String, dynamic> getData(){
+    return _data;
+  }
 }
