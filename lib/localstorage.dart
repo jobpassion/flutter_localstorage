@@ -120,12 +120,30 @@ class LocalStorage {
     await _dir.clear();
     return _flush();
   }
+  bool writing = false;
+  bool needReWrite = false;
 
   Future<void> _flush() async {
+    if(writing){
+      needReWrite = true;
+      return;
+    }else{
+      return __flush();
+    }
+  }
+  Future<void> __flush() async {
     try {
+      writing = true;
       await _dir.flush();
+      writing = false;
     } catch (e) {
-      rethrow;
+      writing = false;
+      print(e);
+      // rethrow;
+    }
+    if(needReWrite){
+      needReWrite = false;
+      __flush();
     }
     return;
   }
